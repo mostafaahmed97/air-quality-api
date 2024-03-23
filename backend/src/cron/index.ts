@@ -1,5 +1,5 @@
-import { AirQualityMeasurment } from '../db/model';
-import { IqAirAPI } from '../iqair-api';
+import { AirQualityMeasurment } from '../air-quality/model';
+import { AirQualityService } from '../air-quality';
 import cron from 'node-cron';
 
 async function pollParisData() {
@@ -8,7 +8,7 @@ async function pollParisData() {
   try {
     const parisCoords = { lat: 48.856613, lng: 2.352222 };
 
-    const result = await IqAirAPI.nearestCityAirQuality(
+    const result = await AirQualityService.nearestCityAirQuality(
       parisCoords.lat,
       parisCoords.lng
     );

@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
-import { router } from './routes';
+import { router } from './air-quality';
 
 const app = express();
 

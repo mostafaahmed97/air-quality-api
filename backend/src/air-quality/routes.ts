@@ -1,4 +1,4 @@
-import { IqAirAPI } from './iqair-api';
+import { AirQualityService } from '.';
 import Joi from 'joi';
 import { Router } from 'express';
 
@@ -20,12 +20,10 @@ router.get(
   async (req, res, next) => {
     try {
       const { lat, lng } = req.params;
-
-      const data = await IqAirAPI.nearestCityAirQuality(
+      const data = await AirQualityService.nearestCityAirQuality(
         Number(lat),
         Number(lng)
       );
-
       return res.send(data);
     } catch (error) {
       next(error);
