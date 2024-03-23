@@ -1,4 +1,4 @@
-export interface NearestCityPollution {
+export interface CityData {
   status: string;
   data: Data;
 }
@@ -12,11 +12,11 @@ export interface Data {
 }
 
 export interface Current {
-  pollution: Pollution;
+  pollution: AirQuality;
   weather: Weather;
 }
 
-export interface Pollution {
+export interface AirQuality {
   ts: Date;
   aqius: number;
   mainus: string;

@@ -10,7 +10,7 @@ const schema = Joi.object({
 const router = Router();
 
 router.get(
-  '/nearest-city-air-pollution/:lat/:lng',
+  '/nearest-city-air-quality/:lat/:lng',
   (req, res, next) => {
     const { error } = schema.validate(req.params, { abortEarly: false });
 
@@ -21,7 +21,7 @@ router.get(
     try {
       const { lat, lng } = req.params;
 
-      const data = await IqAirAPI.getNearestCityPollution(
+      const data = await IqAirAPI.nearestCityAirQuality(
         Number(lat),
         Number(lng)
       );
