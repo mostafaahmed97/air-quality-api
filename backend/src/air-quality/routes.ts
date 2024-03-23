@@ -4,8 +4,8 @@ import { Router } from 'express';
 import { ValidationError } from '../error';
 
 const schema = Joi.object({
-  lat: Joi.number().required().min(-90).max(90),
-  lng: Joi.number().required().min(-180).max(180),
+  lat: Joi.number().required(),
+  lng: Joi.number().required(),
 });
 
 const router = Router();

@@ -7,7 +7,7 @@ async function main() {
   const { port } = config;
 
   await initDbConnection();
-  scheduleCronJobs();
+  // scheduleCronJobs();
 
   app.listen(port, () => {
     console.log(`Server started on port ${port}...`);

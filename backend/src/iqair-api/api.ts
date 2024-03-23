@@ -19,8 +19,6 @@ export async function nearestCityData(lat: number, lng: number) {
 
     return res.data;
   } catch (error: any) {
-    console.log({ response: error.response.data });
-
     if (
       error.response.data.status == 'fail' &&
       error.response.data.data.message == 'city_not_found'
