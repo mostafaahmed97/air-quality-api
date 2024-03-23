@@ -1,3 +1,4 @@
+import { AirQualityMeasurment } from './model';
 import { IQAirAPI } from '../iqair-api';
 
 export async function nearestCityAirQuality(lat: number, lng: number) {
@@ -9,5 +10,17 @@ export async function nearestCityAirQuality(lat: number, lng: number) {
     Result: {
       Pollution: pollution,
     },
+  };
+}
+
+export async function peakPollutionTime() {
+  const peakPollution = await AirQualityMeasurment.findOne().sort({
+    aqius: -1,
+  });
+
+  if (!peakPollution) return {};
+
+  return {
+    date: peakPollution.ts,
   };
 }

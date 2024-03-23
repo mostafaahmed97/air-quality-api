@@ -2,7 +2,7 @@ import { AirQuality } from '../iqair-api';
 import mongoose from 'mongoose';
 
 interface IAirQualityMeasurment extends AirQuality {
-  recordedAt: Date;
+  savedAt: Date;
 }
 
 const schema = new mongoose.Schema<IAirQualityMeasurment>({
@@ -11,7 +11,7 @@ const schema = new mongoose.Schema<IAirQualityMeasurment>({
   mainus: { type: String, required: true },
   aqicn: { type: Number, required: true },
   maincn: { type: String, required: true },
-  recordedAt: { type: Date, required: true },
+  savedAt: { type: Date, required: true },
 });
 
 schema.set('toJSON', {

@@ -31,4 +31,14 @@ router.get(
   }
 );
 
+router.get('/peak-pollution-time', async (req, res, next) => {
+  try {
+    const result = await AirQualityService.peakPollutionTime();
+
+    res.send(result);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export { router };

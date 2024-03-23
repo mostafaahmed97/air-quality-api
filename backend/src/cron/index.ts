@@ -17,7 +17,7 @@ async function pollParisData() {
 
     const measurment = new AirQualityMeasurment({
       ...airQuality,
-      recordedAt: Date.now(),
+      savedAt: Date.now(),
     });
 
     await measurment.save();
