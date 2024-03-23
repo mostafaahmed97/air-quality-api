@@ -1,6 +1,7 @@
 import { AirQualityService } from '.';
 import Joi from 'joi';
 import { Router } from 'express';
+import { ValidationError } from '../error';
 
 const schema = Joi.object({
   lat: Joi.number().required().min(-90).max(90),
@@ -14,7 +15,7 @@ router.get(
   (req, res, next) => {
     const { error } = schema.validate(req.params, { abortEarly: false });
 
-    if (error) next(error);
+    if (error) next(new ValidationError(error.message));
     else next();
   },
   async (req, res, next) => {

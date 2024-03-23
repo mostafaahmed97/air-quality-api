@@ -1,4 +1,5 @@
 import cors from 'cors';
+import { errorHandlingMiddleware } from './error';
 import express from 'express';
 import morgan from 'morgan';
 import { router } from './air-quality';
@@ -18,5 +19,7 @@ app.use('/api', router);
 app.use((req, res) => {
   res.status(404).send('Not found');
 });
+
+app.use(errorHandlingMiddleware);
 
 export { app };
