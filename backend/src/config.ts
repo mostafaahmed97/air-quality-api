@@ -8,4 +8,9 @@ export const config = {
     url: process.env.IQAIR_API_URL,
     key: process.env.IQAIR_API_KEY,
   },
+  db: {
+    port: process.env.DB_PORT || 0,
+    host: process.env.DB_HOST || '',
+    name: process.env.DB_NAME || '',
+  },
 };
