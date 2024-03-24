@@ -1,7 +1,8 @@
+import { beforeAll, describe, expect, test } from '@jest/globals';
+
 import { AirQualityService } from '../../../src/air-quality';
 import { jest } from '@jest/globals';
-import { nearestCityAPIResponse } from './responses.mock';
-import { nearestCityData } from '../../../src/iqair-api/api';
+import { nearestCityAPIResponse } from '../../mocks/responses.mock';
 
 jest.mock('../../../src/iqair-api/api', () => ({
   nearestCityData: () => nearestCityAPIResponse,
