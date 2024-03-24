@@ -1,8 +1,20 @@
-# Air Quality API
+# Air Quality API <!-- omit in toc -->
 
 A simple Node.js REST API to retrieve air quality information using GPS co-ordinates.
 
 ![alt text](./docs/images/usage.png)
+
+- [Installation](#installation)
+  - [Getting an IQAir API Key](#getting-an-iqair-api-key)
+  - [With Docker](#with-docker)
+  - [Without Docker](#without-docker)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+  - [Endpoints](#endpoints)
+  - [Integration with IQAir](#integration-with-iqair)
+  - [CRON Job](#cron-job)
+- [Tests](#tests)
+
 
 ## Installation
 
