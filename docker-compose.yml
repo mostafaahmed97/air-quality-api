@@ -16,7 +16,7 @@ services:
       - db
     environment:
       - PORT=3000
-      - IQAIR_API_KEY=e9eb954c-0e93-4446-a2c8-566c262d7404
+      - IQAIR_API_KEY=<ADD YOUR KEY>
       - IQAIR_API_URL=http://api.airvisual.com/v2
 
       - DB_PORT=27017
